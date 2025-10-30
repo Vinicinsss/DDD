@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MinhaApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+02e9b38075b7310698f06a935471e6dce6737cc7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8f5b1f76d62405d027a57248a7c10e82ef792e5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("MinhaApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MinhaApp.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

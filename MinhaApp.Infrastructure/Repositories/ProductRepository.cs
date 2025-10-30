@@ -2,8 +2,6 @@ using Microsoft.EntityFrameworkCore;
 using MinhaApp.Application.Interfaces;
 using MinhaApp.Domain.Entities;
 using MinhaApp.Infrastructure.Data;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
 namespace MinhaApp.Infrastructure.Repositories
 {
@@ -21,8 +19,10 @@ namespace MinhaApp.Infrastructure.Repositories
             return await _context.Products.ToListAsync();
         }
 
+        // Correção: Alinhe o retorno com a interface, permitindo nulo com 'Product?'.
         public async Task<Product?> GetByIdAsync(int id)
         {
+            // Agora este código é 100% válido.
             return await _context.Products.FindAsync(id);
         }
 
@@ -40,7 +40,7 @@ namespace MinhaApp.Infrastructure.Repositories
 
         public async Task DeleteAsync(int id)
         {
-            var product = await _context.Products.FindAsync(id);
+            var product = await GetByIdAsync(id);
             if (product != null)
             {
                 _context.Products.Remove(product);
