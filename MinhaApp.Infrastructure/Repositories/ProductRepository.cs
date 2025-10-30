@@ -16,14 +16,14 @@ namespace MinhaApp.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<Product> GetByIdAsync(int id)
-        {
-            return await _context.Products.FindAsync(id);
-        }
-
         public async Task<IEnumerable<Product>> GetAllAsync()
         {
             return await _context.Products.ToListAsync();
+        }
+
+        public async Task<Product?> GetByIdAsync(int id)
+        {
+            return await _context.Products.FindAsync(id);
         }
 
         public async Task AddAsync(Product product)
@@ -34,7 +34,7 @@ namespace MinhaApp.Infrastructure.Repositories
 
         public async Task UpdateAsync(Product product)
         {
-            _context.Products.Update(product);
+            _context.Entry(product).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
 
